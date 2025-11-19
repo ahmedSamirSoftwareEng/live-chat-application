@@ -13,7 +13,7 @@ class CreateParticiapntsTable extends Migration
      */
     public function up()
     {
-        Schema::create('particiapnts', function (Blueprint $table) {
+        Schema::create('participants', function (Blueprint $table) {
             $table->foreignId('conversation_id')->constrained('conversations')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->enum('role', ['admin', 'member'])->default('member');

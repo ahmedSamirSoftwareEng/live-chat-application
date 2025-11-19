@@ -11,12 +11,12 @@ class Conversation extends Model
     protected $fillable = [
         'user_id',
         'title',
+        'type',
         'last_message_id',
     ];
-
     public function participants()
     {
-        return $this->belongsToMany(User::class, 'participants')->withPivot('joined_at' , 'role');
+        return $this->belongsToMany(User::class, 'participants')->withPivot('joined_at', 'role');
     }
 
     public function messages()
